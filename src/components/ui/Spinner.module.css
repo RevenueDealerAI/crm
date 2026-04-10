@@ -1,0 +1,15 @@
+.spinner {
+  animation: spin 0.7s linear infinite;
+  color: var(--color-primary);
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

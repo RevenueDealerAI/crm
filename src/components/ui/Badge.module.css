@@ -1,0 +1,18 @@
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px var(--space-2);
+  border-radius: 9999px;
+  font-size: var(--font-xs);
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.new { background: var(--color-primary-light); color: #1d4ed8; }
+.contacted { background: var(--color-warning-light); color: #92400e; }
+.quoted { background: #f3e8ff; color: #7c3aed; }
+.negotiating { background: #fff7ed; color: #c2410c; }
+.won { background: var(--color-success-light); color: #166534; }
+.lost { background: var(--color-danger-light); color: #991b1b; }
+.dead { background: var(--color-gray-100); color: var(--color-gray-600); }

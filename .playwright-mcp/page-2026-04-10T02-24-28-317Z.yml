@@ -1,0 +1,471 @@
+- generic [ref=e200]:
+  - complementary [ref=e201]:
+    - generic [ref=e202]: LeadFlow
+    - navigation [ref=e203]:
+      - link "Dashboard" [ref=e204] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e205]
+        - text: Dashboard
+      - link "Leads" [ref=e210] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e211]
+        - text: Leads
+      - link "Manager" [ref=e216] [cursor=pointer]:
+        - /url: /manager
+        - img [ref=e217]
+        - text: Manager
+    - generic [ref=e219]:
+      - generic [ref=e220]: Rahul
+      - generic [ref=e221]: manager
+      - button "Sign Out" [ref=e222] [cursor=pointer]:
+        - img [ref=e223]
+        - text: Sign Out
+  - generic [ref=e226]:
+    - banner [ref=e227]:
+      - heading "Leads" [level=1] [ref=e229]
+      - button "Notifications" [ref=e232] [cursor=pointer]:
+        - generic [ref=e233]:
+          - img [ref=e234]
+          - generic [ref=e237]: "13"
+    - main [ref=e238]:
+      - generic [ref=e239]:
+        - generic [ref=e240]: 95 leads
+        - button "New Lead" [ref=e241] [cursor=pointer]:
+          - img [ref=e242]
+          - text: New Lead
+      - generic [ref=e243]:
+        - generic [ref=e245]:
+          - img
+          - textbox "Search name, phone, vehicle, notes…" [ref=e246]
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - generic [ref=e249]: Status
+            - generic [ref=e250]:
+              - button "New" [ref=e251] [cursor=pointer]
+              - button "Contacted" [ref=e252] [cursor=pointer]
+              - button "Quoted" [ref=e253] [cursor=pointer]
+              - button "Negotiating" [ref=e254] [cursor=pointer]
+              - button "Won" [ref=e255] [cursor=pointer]
+              - button "Lost" [ref=e256] [cursor=pointer]
+              - button "Dead" [ref=e257] [cursor=pointer]
+          - generic [ref=e258]:
+            - generic [ref=e259]: Rep
+            - combobox [ref=e260] [cursor=pointer]:
+              - option "All Reps" [selected]
+              - option "Michael"
+              - option "Neal"
+          - generic [ref=e261]:
+            - generic [ref=e262]: Date Range
+            - generic [ref=e263]:
+              - textbox [ref=e264]
+              - generic [ref=e265]: to
+              - textbox [ref=e266]
+          - generic [ref=e267]:
+            - generic [ref=e268]: Tags
+            - generic [ref=e269]:
+              - button "Spanish" [ref=e270] [cursor=pointer]
+              - button "Incompatible" [ref=e271] [cursor=pointer]
+              - button "Small Part" [ref=e272] [cursor=pointer]
+              - button "Abused" [ref=e273] [cursor=pointer]
+              - button "No Voice" [ref=e274] [cursor=pointer]
+              - button "Old Customer" [ref=e275] [cursor=pointer]
+      - table [ref=e277]:
+        - rowgroup [ref=e278]:
+          - row "Date Customer Phone Vehicle Part Status Rep" [ref=e279]:
+            - columnheader "Date" [ref=e280] [cursor=pointer]:
+              - text: Date
+              - img [ref=e282]
+            - columnheader "Customer" [ref=e285] [cursor=pointer]:
+              - text: Customer
+              - img [ref=e287]
+            - columnheader "Phone" [ref=e290]
+            - columnheader "Vehicle" [ref=e291]
+            - columnheader "Part" [ref=e292]
+            - columnheader "Status" [ref=e293] [cursor=pointer]:
+              - text: Status
+              - img [ref=e295]
+            - columnheader "Rep" [ref=e298] [cursor=pointer]:
+              - text: Rep
+              - img [ref=e300]
+            - columnheader [ref=e303]
+        - rowgroup [ref=e304]:
+          - row "10/04/2026 — 16165506515 1977 telris salon engine New Rahul" [ref=e305] [cursor=pointer]:
+            - cell "10/04/2026" [ref=e306]
+            - cell "—" [ref=e307]
+            - cell "16165506515" [ref=e308]
+            - cell "1977 telris salon" [ref=e309]
+            - cell "engine" [ref=e310]
+            - cell "New" [ref=e311]:
+              - generic [ref=e312]: New
+            - cell "Rahul" [ref=e313]
+            - cell [ref=e314]:
+              - generic [ref=e315]:
+                - button [ref=e316]:
+                  - img [ref=e317]
+                - button [ref=e320]:
+                  - img [ref=e321]
+          - row "10/04/2026 — 19518582661 2015 ford f-150 time pass New Rahul" [ref=e324] [cursor=pointer]:
+            - cell "10/04/2026" [ref=e325]
+            - cell "—" [ref=e326]
+            - cell "19518582661" [ref=e327]
+            - cell "2015 ford f-150" [ref=e328]
+            - cell "time pass" [ref=e329]
+            - cell "New" [ref=e330]:
+              - generic [ref=e331]: New
+            - cell "Rahul" [ref=e332]
+            - cell [ref=e333]:
+              - generic [ref=e334]:
+                - button [ref=e335]:
+                  - img [ref=e336]
+                - button [ref=e339]:
+                  - img [ref=e340]
+          - row "06/04/2026 — 14125852766 2024 Mazada cs5 2.5 non turbo qout given check thne call me New Rahul" [ref=e343] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e344]
+            - cell "—" [ref=e345]
+            - cell "14125852766" [ref=e346]
+            - cell "2024 Mazada cs5 2.5 non turbo" [ref=e347]
+            - cell "qout given check thne call me" [ref=e348]
+            - cell "New" [ref=e349]:
+              - generic [ref=e350]: New
+            - cell "Rahul" [ref=e351]
+            - cell [ref=e352]:
+              - generic [ref=e353]:
+                - button [ref=e354]:
+                  - img [ref=e355]
+                - button [ref=e358]:
+                  - img [ref=e359]
+          - row "06/04/2026 — 12817393507 — — New Rahul" [ref=e362] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e363]
+            - cell "—" [ref=e364]
+            - cell "12817393507" [ref=e365]
+            - cell "—" [ref=e366]
+            - cell "—" [ref=e367]
+            - cell "New" [ref=e368]:
+              - generic [ref=e369]: New
+            - cell "Rahul" [ref=e370]
+            - cell [ref=e371]:
+              - generic [ref=e372]:
+                - button [ref=e373]:
+                  - img [ref=e374]
+                - button [ref=e377]:
+                  - img [ref=e378]
+          - row "06/04/2026 — 12568008116 2013 Ford Edge 3.5L V6 DOHC 24V engine Quoted Neal" [ref=e381] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e382]
+            - cell "—" [ref=e383]
+            - cell "12568008116" [ref=e384]
+            - cell "2013 Ford Edge" [ref=e385]
+            - cell "3.5L V6 DOHC 24V engine" [ref=e386]
+            - cell "Quoted" [ref=e387]:
+              - generic [ref=e388]: Quoted
+            - cell "Neal" [ref=e389]
+            - cell [ref=e390]:
+              - generic [ref=e391]:
+                - button [ref=e392]:
+                  - img [ref=e393]
+                - button [ref=e396]:
+                  - img [ref=e397]
+          - row "06/04/2026 — 15107128500 — transmission Lost Neal" [ref=e400] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e401]
+            - cell "—" [ref=e402]
+            - cell "15107128500" [ref=e403]
+            - cell "—" [ref=e404]
+            - cell "transmission" [ref=e405]
+            - cell "Lost" [ref=e406]:
+              - generic [ref=e407]: Lost
+            - cell "Neal" [ref=e408]
+            - cell [ref=e409]:
+              - generic [ref=e410]:
+                - button [ref=e411]:
+                  - img [ref=e412]
+                - button [ref=e415]:
+                  - img [ref=e416]
+          - row "06/04/2026 — 12063544032 2018 Volkswagen Golf GTI Engine New Neal" [ref=e419] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e420]
+            - cell "—" [ref=e421]
+            - cell "12063544032" [ref=e422]
+            - cell "2018 Volkswagen Golf GTI" [ref=e423]
+            - cell "Engine" [ref=e424]
+            - cell "New" [ref=e425]:
+              - generic [ref=e426]: New
+            - cell "Neal" [ref=e427]
+            - cell [ref=e428]:
+              - generic [ref=e429]:
+                - button [ref=e430]:
+                  - img [ref=e431]
+                - button [ref=e434]:
+                  - img [ref=e435]
+          - row "06/04/2026 — 15205867011 — — New Neal" [ref=e438] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e439]
+            - cell "—" [ref=e440]
+            - cell "15205867011" [ref=e441]
+            - cell "—" [ref=e442]
+            - cell "—" [ref=e443]
+            - cell "New" [ref=e444]:
+              - generic [ref=e445]: New
+            - cell "Neal" [ref=e446]
+            - cell [ref=e447]:
+              - generic [ref=e448]:
+                - button [ref=e449]:
+                  - img [ref=e450]
+                - button [ref=e453]:
+                  - img [ref=e454]
+          - row "06/04/2026 — 14045518881 383 stroke model turbo get scammed online New Neal" [ref=e457] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e458]
+            - cell "—" [ref=e459]
+            - cell "14045518881" [ref=e460]
+            - cell "383 stroke model turbo" [ref=e461]
+            - cell "get scammed online" [ref=e462]
+            - cell "New" [ref=e463]:
+              - generic [ref=e464]: New
+            - cell "Neal" [ref=e465]
+            - cell [ref=e466]:
+              - generic [ref=e467]:
+                - button [ref=e468]:
+                  - img [ref=e469]
+                - button [ref=e472]:
+                  - img [ref=e473]
+          - row "06/04/2026 — 18478094175 2013 Mercedes GLK Class Engine lokking for sons car Contacted Neal" [ref=e476] [cursor=pointer]:
+            - cell "06/04/2026" [ref=e477]
+            - cell "—" [ref=e478]
+            - cell "18478094175" [ref=e479]
+            - cell "2013 Mercedes GLK Class Engine" [ref=e480]
+            - cell "lokking for sons car" [ref=e481]
+            - cell "Contacted" [ref=e482]:
+              - generic [ref=e483]: Contacted
+            - cell "Neal" [ref=e484]
+            - cell [ref=e485]:
+              - generic [ref=e486]:
+                - button [ref=e487]:
+                  - img [ref=e488]
+                - button [ref=e491]:
+                  - img [ref=e492]
+          - row "05/04/2026 — 17175744466 2007 Jeep Cherokee 3.7 want to buy ofline New Neal" [ref=e495] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e496]
+            - cell "—" [ref=e497]
+            - cell "17175744466" [ref=e498]
+            - cell "2007 Jeep Cherokee 3.7" [ref=e499]
+            - cell "want to buy ofline" [ref=e500]
+            - cell "New" [ref=e501]:
+              - generic [ref=e502]: New
+            - cell "Neal" [ref=e503]
+            - cell [ref=e504]:
+              - generic [ref=e505]:
+                - button [ref=e506]:
+                  - img [ref=e507]
+                - button [ref=e510]:
+                  - img [ref=e511]
+          - row "05/04/2026 — 12568008116 2013 Ford Edge Engine BUDHA KAAT K BHAG GAYA New Neal" [ref=e514] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e515]
+            - cell "—" [ref=e516]
+            - cell "12568008116" [ref=e517]
+            - cell "2013 Ford Edge Engine" [ref=e518]
+            - cell "BUDHA KAAT K BHAG GAYA" [ref=e519]
+            - cell "New" [ref=e520]:
+              - generic [ref=e521]: New
+            - cell "Neal" [ref=e522]
+            - cell [ref=e523]:
+              - generic [ref=e524]:
+                - button [ref=e525]:
+                  - img [ref=e526]
+                - button [ref=e529]:
+                  - img [ref=e530]
+          - row "05/04/2026 Jimmy 15616125420 — — New Neal" [ref=e533] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e534]
+            - cell "Jimmy" [ref=e535]
+            - cell "15616125420" [ref=e536]
+            - cell "—" [ref=e537]
+            - cell "—" [ref=e538]
+            - cell "New" [ref=e539]:
+              - generic [ref=e540]: New
+            - cell "Neal" [ref=e541]
+            - cell [ref=e542]:
+              - generic [ref=e543]:
+                - button [ref=e544]:
+                  - img [ref=e545]
+                - button [ref=e548]:
+                  - img [ref=e549]
+          - row "05/04/2026 — 19708156756 1999 Ford Ranger Engine 3.0 qut shared CB New Neal" [ref=e552] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e553]
+            - cell "—" [ref=e554]
+            - cell "19708156756" [ref=e555]
+            - cell "1999 Ford Ranger Engine 3.0" [ref=e556]
+            - cell "qut shared CB" [ref=e557]
+            - cell "New" [ref=e558]:
+              - generic [ref=e559]: New
+            - cell "Neal" [ref=e560]
+            - cell [ref=e561]:
+              - generic [ref=e562]:
+                - button [ref=e563]:
+                  - img [ref=e564]
+                - button [ref=e567]:
+                  - img [ref=e568]
+          - row "05/04/2026 — 16199227540 ford car project any motor fake guy New Neal" [ref=e571] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e572]
+            - cell "—" [ref=e573]
+            - cell "16199227540" [ref=e574]
+            - cell "ford car project any motor" [ref=e575]
+            - cell "fake guy" [ref=e576]
+            - cell "New" [ref=e577]:
+              - generic [ref=e578]: New
+            - cell "Neal" [ref=e579]
+            - cell [ref=e580]:
+              - generic [ref=e581]:
+                - button [ref=e582]:
+                  - img [ref=e583]
+                - button [ref=e586]:
+                  - img [ref=e587]
+          - row "05/04/2026 — 16363429242 1996 Firebird Transmission want ofline New Neal" [ref=e590] [cursor=pointer]:
+            - cell "05/04/2026" [ref=e591]
+            - cell "—" [ref=e592]
+            - cell "16363429242" [ref=e593]
+            - cell "1996 Firebird Transmission" [ref=e594]
+            - cell "want ofline" [ref=e595]
+            - cell "New" [ref=e596]:
+              - generic [ref=e597]: New
+            - cell "Neal" [ref=e598]
+            - cell [ref=e599]:
+              - generic [ref=e600]:
+                - button [ref=e601]:
+                  - img [ref=e602]
+                - button [ref=e605]:
+                  - img [ref=e606]
+          - row "02/04/2026 — 12409183033 — — New Neal" [ref=e609] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e610]
+            - cell "—" [ref=e611]
+            - cell "12409183033" [ref=e612]
+            - cell "—" [ref=e613]
+            - cell "—" [ref=e614]
+            - cell "New" [ref=e615]:
+              - generic [ref=e616]: New
+            - cell "Neal" [ref=e617]
+            - cell [ref=e618]:
+              - generic [ref=e619]:
+                - button [ref=e620]:
+                  - img [ref=e621]
+                - button [ref=e624]:
+                  - img [ref=e625]
+          - row "02/04/2026 — 16205130102 2006 Buick Lucerne Transmission AT, 3.8L Quoted Neal" [ref=e628] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e629]
+            - cell "—" [ref=e630]
+            - cell "16205130102" [ref=e631]
+            - cell "2006 Buick Lucerne" [ref=e632]
+            - cell "Transmission AT, 3.8L" [ref=e633]
+            - cell "Quoted" [ref=e634]:
+              - generic [ref=e635]: Quoted
+            - cell "Neal" [ref=e636]
+            - cell [ref=e637]:
+              - generic [ref=e638]:
+                - button [ref=e639]:
+                  - img [ref=e640]
+                - button [ref=e643]:
+                  - img [ref=e644]
+          - row "02/04/2026 — 14108315665 2016 Audi A6 with a 2.0L L4 DOHC 16V engine New Neal" [ref=e647] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e648]
+            - cell "—" [ref=e649]
+            - cell "14108315665" [ref=e650]
+            - cell "2016 Audi A6" [ref=e651]
+            - cell "with a 2.0L L4 DOHC 16V engine" [ref=e652]
+            - cell "New" [ref=e653]:
+              - generic [ref=e654]: New
+            - cell "Neal" [ref=e655]
+            - cell [ref=e656]:
+              - generic [ref=e657]:
+                - button [ref=e658]:
+                  - img [ref=e659]
+                - button [ref=e662]:
+                  - img [ref=e663]
+          - row "02/04/2026 — 17207866918 spanish — New Neal" [ref=e666] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e667]
+            - cell "—" [ref=e668]
+            - cell "17207866918" [ref=e669]
+            - cell "spanish" [ref=e670]
+            - cell "—" [ref=e671]
+            - cell "New" [ref=e672]:
+              - generic [ref=e673]: New
+            - cell "Neal" [ref=e674]
+            - cell [ref=e675]:
+              - generic [ref=e676]:
+                - button [ref=e677]:
+                  - img [ref=e678]
+                - button [ref=e681]:
+                  - img [ref=e682]
+          - row "02/04/2026 — 13109014564 2016 Ford explorer AWD 3.5L V6 no turbo Contacted Neal" [ref=e685] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e686]
+            - cell "—" [ref=e687]
+            - cell "13109014564" [ref=e688]
+            - cell "2016 Ford explorer AWD" [ref=e689]
+            - cell "3.5L V6 no turbo" [ref=e690]
+            - cell "Contacted" [ref=e691]:
+              - generic [ref=e692]: Contacted
+            - cell "Neal" [ref=e693]
+            - cell [ref=e694]:
+              - generic [ref=e695]:
+                - button [ref=e696]:
+                  - img [ref=e697]
+                - button [ref=e700]:
+                  - img [ref=e701]
+          - row "02/04/2026 — 12566405038 2009 honda accord Engine 3.5 v6 Lost Neal" [ref=e704] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e705]
+            - cell "—" [ref=e706]
+            - cell "12566405038" [ref=e707]
+            - cell "2009 honda accord" [ref=e708]
+            - cell "Engine 3.5 v6" [ref=e709]
+            - cell "Lost" [ref=e710]:
+              - generic [ref=e711]: Lost
+            - cell "Neal" [ref=e712]
+            - cell [ref=e713]:
+              - generic [ref=e714]:
+                - button [ref=e715]:
+                  - img [ref=e716]
+                - button [ref=e719]:
+                  - img [ref=e720]
+          - row "02/04/2026 — 13179666470 2016 jeep — New Neal" [ref=e723] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e724]
+            - cell "—" [ref=e725]
+            - cell "13179666470" [ref=e726]
+            - cell "2016 jeep" [ref=e727]
+            - cell "—" [ref=e728]
+            - cell "New" [ref=e729]:
+              - generic [ref=e730]: New
+            - cell "Neal" [ref=e731]
+            - cell [ref=e732]:
+              - generic [ref=e733]:
+                - button [ref=e734]:
+                  - img [ref=e735]
+                - button [ref=e738]:
+                  - img [ref=e739]
+          - row "02/04/2026 — 15202714027 1964 plymouth barracuda 5.2 engine Quoted Neal" [ref=e742] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e743]
+            - cell "—" [ref=e744]
+            - cell "15202714027" [ref=e745]
+            - cell "1964 plymouth barracuda" [ref=e746]
+            - cell "5.2 engine" [ref=e747]
+            - cell "Quoted" [ref=e748]:
+              - generic [ref=e749]: Quoted
+            - cell "Neal" [ref=e750]
+            - cell [ref=e751]:
+              - generic [ref=e752]:
+                - button [ref=e753]:
+                  - img [ref=e754]
+                - button [ref=e757]:
+                  - img [ref=e758]
+          - row "02/04/2026 — 15024714714 2014 gmc terrain engine 2.4L 4-cylinder engin Quoted Neal" [ref=e761] [cursor=pointer]:
+            - cell "02/04/2026" [ref=e762]
+            - cell "—" [ref=e763]
+            - cell "15024714714" [ref=e764]
+            - cell "2014 gmc terrain engine" [ref=e765]
+            - cell "2.4L 4-cylinder engin" [ref=e766]
+            - cell "Quoted" [ref=e767]:
+              - generic [ref=e768]: Quoted
+            - cell "Neal" [ref=e769]
+            - cell [ref=e770]:
+              - generic [ref=e771]:
+                - button [ref=e772]:
+                  - img [ref=e773]
+                - button [ref=e776]:
+                  - img [ref=e777]
+      - generic [ref=e780]:
+        - generic [ref=e781]: Page 1 of 4
+        - generic [ref=e782]:
+          - button "Previous" [disabled] [ref=e783]
+          - button "Next" [ref=e784] [cursor=pointer]

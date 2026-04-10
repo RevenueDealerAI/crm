@@ -1,0 +1,141 @@
+- generic [ref=e1307]:
+  - complementary [ref=e1308]:
+    - generic [ref=e1309]: LeadFlow
+    - navigation [ref=e1310]:
+      - link "Dashboard" [ref=e1311] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e1312]
+        - text: Dashboard
+      - link "Leads" [ref=e1317] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e1318]
+        - text: Leads
+    - generic [ref=e1323]:
+      - generic [ref=e1324]: Neal
+      - generic [ref=e1325]: rep
+      - button "Sign Out" [ref=e1326] [cursor=pointer]:
+        - img [ref=e1327]
+        - text: Sign Out
+  - generic [ref=e1330]:
+    - banner [ref=e1331]:
+      - heading "Dashboard" [level=1] [ref=e1333]
+      - button "Notifications" [ref=e1336] [cursor=pointer]:
+        - img [ref=e1338]
+    - main [ref=e1341]:
+      - generic [ref=e1342]:
+        - generic [ref=e1344]:
+          - img [ref=e1345]
+          - generic [ref=e1348]: "56"
+          - generic [ref=e1349]: My Active Leads
+        - generic [ref=e1351]:
+          - img [ref=e1352]
+          - generic [ref=e1355]: "0"
+          - generic [ref=e1356]: Follow-ups Due
+        - generic [ref=e1358]:
+          - img [ref=e1359]
+          - generic [ref=e1362]: "9"
+          - generic [ref=e1363]: Quoted This Week
+        - generic [ref=e1365]:
+          - img [ref=e1366]
+          - generic [ref=e1372]: "1"
+          - generic [ref=e1373]: Won This Month
+      - generic [ref=e1374]:
+        - heading "Follow-ups Due" [level=2] [ref=e1376]
+        - generic [ref=e1377]:
+          - img [ref=e1378]
+          - generic [ref=e1381]: No follow-ups due
+          - generic [ref=e1382]: You're all caught up!
+      - generic [ref=e1383]:
+        - generic [ref=e1384]:
+          - heading "Recent Leads" [level=2] [ref=e1385]
+          - link "View all →" [ref=e1386] [cursor=pointer]:
+            - /url: /leads
+        - table [ref=e1388]:
+          - rowgroup [ref=e1389]:
+            - row "Date Customer Phone Vehicle Status" [ref=e1390]:
+              - columnheader "Date" [ref=e1391]
+              - columnheader "Customer" [ref=e1392]
+              - columnheader "Phone" [ref=e1393]
+              - columnheader "Vehicle" [ref=e1394]
+              - columnheader "Status" [ref=e1395]
+          - rowgroup [ref=e1396]:
+            - row "10/04/2026 12568008116 2013 Ford Edge Quoted" [ref=e1397] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1398]
+              - cell [ref=e1399]
+              - cell "12568008116" [ref=e1400]
+              - cell "2013 Ford Edge" [ref=e1401]
+              - cell "Quoted" [ref=e1402]:
+                - button "Quoted" [ref=e1404]:
+                  - generic [ref=e1405]: Quoted
+            - row "10/04/2026 15107128500 — Lost" [ref=e1406] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1407]
+              - cell [ref=e1408]
+              - cell "15107128500" [ref=e1409]
+              - cell "—" [ref=e1410]
+              - cell "Lost" [ref=e1411]:
+                - button "Lost" [ref=e1413]:
+                  - generic [ref=e1414]: Lost
+            - row "10/04/2026 12063544032 2018 Volkswagen Golf GTI New" [ref=e1415] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1416]
+              - cell [ref=e1417]
+              - cell "12063544032" [ref=e1418]
+              - cell "2018 Volkswagen Golf GTI" [ref=e1419]
+              - cell "New" [ref=e1420]:
+                - button "New" [ref=e1422]:
+                  - generic [ref=e1423]: New
+            - row "10/04/2026 15205867011 — New" [ref=e1424] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1425]
+              - cell [ref=e1426]
+              - cell "15205867011" [ref=e1427]
+              - cell "—" [ref=e1428]
+              - cell "New" [ref=e1429]:
+                - button "New" [ref=e1431]:
+                  - generic [ref=e1432]: New
+            - row "10/04/2026 14045518881 383 stroke model turbo New" [ref=e1433] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1434]
+              - cell [ref=e1435]
+              - cell "14045518881" [ref=e1436]
+              - cell "383 stroke model turbo" [ref=e1437]
+              - cell "New" [ref=e1438]:
+                - button "New" [ref=e1440]:
+                  - generic [ref=e1441]: New
+            - row "10/04/2026 18478094175 2013 Mercedes GLK Class Engine Contacted" [ref=e1442] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1443]
+              - cell [ref=e1444]
+              - cell "18478094175" [ref=e1445]
+              - cell "2013 Mercedes GLK Class Engine" [ref=e1446]
+              - cell "Contacted" [ref=e1447]:
+                - button "Contacted" [ref=e1449]:
+                  - generic [ref=e1450]: Contacted
+            - row "10/04/2026 17175744466 2007 Jeep Cherokee 3.7 New" [ref=e1451] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1452]
+              - cell [ref=e1453]
+              - cell "17175744466" [ref=e1454]
+              - cell "2007 Jeep Cherokee 3.7" [ref=e1455]
+              - cell "New" [ref=e1456]:
+                - button "New" [ref=e1458]:
+                  - generic [ref=e1459]: New
+            - row "10/04/2026 12568008116 2013 Ford Edge Engine New" [ref=e1460] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1461]
+              - cell [ref=e1462]
+              - cell "12568008116" [ref=e1463]
+              - cell "2013 Ford Edge Engine" [ref=e1464]
+              - cell "New" [ref=e1465]:
+                - button "New" [ref=e1467]:
+                  - generic [ref=e1468]: New
+            - row "10/04/2026 Jimmy 15616125420 — New" [ref=e1469] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1470]
+              - cell "Jimmy" [ref=e1471]
+              - cell "15616125420" [ref=e1472]
+              - cell "—" [ref=e1473]
+              - cell "New" [ref=e1474]:
+                - button "New" [ref=e1476]:
+                  - generic [ref=e1477]: New
+            - row "10/04/2026 19708156756 1999 Ford Ranger Engine 3.0 New" [ref=e1478] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e1479]
+              - cell [ref=e1480]
+              - cell "19708156756" [ref=e1481]
+              - cell "1999 Ford Ranger Engine 3.0" [ref=e1482]
+              - cell "New" [ref=e1483]:
+                - button "New" [ref=e1485]:
+                  - generic [ref=e1486]: New

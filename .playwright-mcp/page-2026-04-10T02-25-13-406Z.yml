@@ -1,0 +1,95 @@
+- generic [ref=e838]:
+  - complementary [ref=e839]:
+    - generic [ref=e840]: LeadFlow
+    - navigation [ref=e841]:
+      - link "Dashboard" [ref=e842] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e843]
+        - text: Dashboard
+      - link "Leads" [ref=e848] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e849]
+        - text: Leads
+      - link "Manager" [ref=e854] [cursor=pointer]:
+        - /url: /manager
+        - img [ref=e855]
+        - text: Manager
+    - generic [ref=e857]:
+      - generic [ref=e858]: Rahul
+      - generic [ref=e859]: manager
+      - button "Sign Out" [ref=e860] [cursor=pointer]:
+        - img [ref=e861]
+        - text: Sign Out
+  - generic [ref=e864]:
+    - banner [ref=e865]:
+      - heading "Lead Detail" [level=1] [ref=e867]
+      - button "Notifications" [ref=e870] [cursor=pointer]:
+        - generic [ref=e871]:
+          - img [ref=e872]
+          - generic [ref=e875]: "13"
+    - main [ref=e876]:
+      - generic [ref=e877]:
+        - generic [ref=e878]:
+          - button "Back" [ref=e879] [cursor=pointer]:
+            - img [ref=e880]
+            - text: Back
+          - generic [ref=e882]: Riketa Smith
+          - link "14125290585" [ref=e883] [cursor=pointer]:
+            - /url: tel:14125290585
+          - generic [ref=e884]: Won
+        - generic [ref=e885]:
+          - button "Edit" [ref=e886] [cursor=pointer]:
+            - img [ref=e887]
+            - text: Edit
+          - button "Delete" [ref=e890] [cursor=pointer]:
+            - img [ref=e891]
+            - text: Delete
+      - generic [ref=e894]:
+        - button "New" [ref=e895] [cursor=pointer]
+        - button "Contacted" [ref=e896] [cursor=pointer]
+        - button "Quoted" [ref=e897] [cursor=pointer]
+        - button "Negotiating" [ref=e898] [cursor=pointer]
+        - button "Won" [ref=e900] [cursor=pointer]
+        - button "Lost" [ref=e901] [cursor=pointer]
+        - button "Dead" [ref=e902] [cursor=pointer]
+      - generic [ref=e903]:
+        - generic [ref=e904]:
+          - generic [ref=e905]: Vehicle Information
+          - generic [ref=e907]:
+            - generic [ref=e908]:
+              - generic [ref=e909]: Year
+              - generic [ref=e910]: "2019"
+            - generic [ref=e911]:
+              - generic [ref=e912]: Make
+              - generic [ref=e913]: NISSAN
+            - generic [ref=e914]:
+              - generic [ref=e915]: Model
+              - generic [ref=e916]: Sentra
+            - generic [ref=e917]:
+              - generic [ref=e918]: Part Needed
+              - generic [ref=e919]: Engine
+            - generic [ref=e920]:
+              - generic [ref=e921]: Part Detail
+              - generic [ref=e922]: —
+            - generic [ref=e923]:
+              - generic [ref=e924]: Mileage
+              - generic [ref=e925]: —
+            - generic [ref=e926]:
+              - generic [ref=e927]: Price Quoted
+              - generic [ref=e928]: —
+            - generic [ref=e929]:
+              - generic [ref=e930]: Warranty
+              - generic [ref=e931]: —
+        - generic [ref=e932]:
+          - generic [ref=e933]: Notes & Follow-up
+          - generic [ref=e934]:
+            - textbox "Add notes about this lead..." [ref=e935]: Sold 400
+            - generic [ref=e936]:
+              - generic [ref=e937]: "Follow-up:"
+              - textbox [ref=e938]
+              - button "Save" [ref=e939] [cursor=pointer]
+      - generic [ref=e940]:
+        - heading "Activity Timeline" [level=2] [ref=e941]
+        - generic [ref=e943]:
+          - generic [ref=e945]: Lead assigned to System
+          - generic [ref=e946]: Apr 10, 2026, 7:52 AM

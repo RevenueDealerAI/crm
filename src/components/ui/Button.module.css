@@ -1,0 +1,54 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-2);
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  white-space: nowrap;
+}
+
+.button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.sm { padding: var(--space-1) var(--space-2); font-size: var(--font-xs); }
+.md { padding: var(--space-2) var(--space-4); font-size: var(--font-sm); }
+.lg { padding: var(--space-3) var(--space-5); font-size: var(--font-base); }
+
+.primary {
+  background: var(--color-primary);
+  color: white;
+}
+.primary:hover:not(:disabled) { background: var(--color-primary-hover); }
+
+.secondary {
+  background: var(--color-surface);
+  color: var(--color-gray-700);
+  border-color: var(--color-border);
+}
+.secondary:hover:not(:disabled) { background: var(--color-gray-50); }
+
+.danger {
+  background: var(--color-danger);
+  color: white;
+}
+.danger:hover:not(:disabled) { background: var(--color-danger-hover); }
+
+.ghost {
+  background: transparent;
+  color: var(--color-gray-600);
+}
+.ghost:hover:not(:disabled) { background: var(--color-gray-100); }
+
+.spinner {
+  animation: spin 0.6s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}

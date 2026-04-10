@@ -1,0 +1,147 @@
+- generic [ref=e16]:
+  - complementary [ref=e17]:
+    - generic [ref=e18]: LeadFlow
+    - navigation [ref=e19]:
+      - link "Dashboard" [ref=e20] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e21]
+        - text: Dashboard
+      - link "Leads" [ref=e26] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e27]
+        - text: Leads
+      - link "Manager" [ref=e32] [cursor=pointer]:
+        - /url: /manager
+        - img [ref=e33]
+        - text: Manager
+    - generic [ref=e35]:
+      - generic [ref=e36]: Rahul
+      - generic [ref=e37]: manager
+      - button "Sign Out" [ref=e38] [cursor=pointer]:
+        - img [ref=e39]
+        - text: Sign Out
+  - generic [ref=e42]:
+    - banner [ref=e43]:
+      - heading "Dashboard" [level=1] [ref=e45]
+      - button "Notifications" [ref=e48] [cursor=pointer]:
+        - generic [ref=e49]:
+          - img [ref=e50]
+          - generic [ref=e53]: "13"
+    - main [ref=e54]:
+      - generic [ref=e55]:
+        - generic [ref=e57]:
+          - img [ref=e58]
+          - generic [ref=e61]: "84"
+          - generic [ref=e62]: My Active Leads
+        - generic [ref=e64]:
+          - img [ref=e65]
+          - generic [ref=e68]: "0"
+          - generic [ref=e69]: Follow-ups Due
+        - generic [ref=e71]:
+          - img [ref=e72]
+          - generic [ref=e75]: "9"
+          - generic [ref=e76]: Quoted This Week
+        - generic [ref=e78]:
+          - img [ref=e79]
+          - generic [ref=e85]: "3"
+          - generic [ref=e86]: Won This Month
+      - generic [ref=e87]:
+        - heading "Follow-ups Due" [level=2] [ref=e89]
+        - generic [ref=e90]:
+          - img [ref=e91]
+          - generic [ref=e94]: No follow-ups due
+          - generic [ref=e95]: You're all caught up!
+      - generic [ref=e96]:
+        - generic [ref=e97]:
+          - heading "Recent Leads" [level=2] [ref=e98]
+          - link "View all →" [ref=e99] [cursor=pointer]:
+            - /url: /leads
+        - table [ref=e101]:
+          - rowgroup [ref=e102]:
+            - row "Date Customer Phone Vehicle Status" [ref=e103]:
+              - columnheader "Date" [ref=e104]
+              - columnheader "Customer" [ref=e105]
+              - columnheader "Phone" [ref=e106]
+              - columnheader "Vehicle" [ref=e107]
+              - columnheader "Status" [ref=e108]
+          - rowgroup [ref=e109]:
+            - row "10/04/2026 16165506515 1977 telris salon New" [ref=e110] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e111]
+              - cell [ref=e112]
+              - cell "16165506515" [ref=e113]
+              - cell "1977 telris salon" [ref=e114]
+              - cell "New" [ref=e115]:
+                - button "New" [ref=e117]:
+                  - generic [ref=e118]: New
+            - row "10/04/2026 19518582661 2015 ford f-150 New" [ref=e119] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e120]
+              - cell [ref=e121]
+              - cell "19518582661" [ref=e122]
+              - cell "2015 ford f-150" [ref=e123]
+              - cell "New" [ref=e124]:
+                - button "New" [ref=e126]:
+                  - generic [ref=e127]: New
+            - row "10/04/2026 14125852766 2024 Mazada cs5 2.5 non turbo New" [ref=e128] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e129]
+              - cell [ref=e130]
+              - cell "14125852766" [ref=e131]
+              - cell "2024 Mazada cs5 2.5 non turbo" [ref=e132]
+              - cell "New" [ref=e133]:
+                - button "New" [ref=e135]:
+                  - generic [ref=e136]: New
+            - row "10/04/2026 12817393507 — New" [ref=e137] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e138]
+              - cell [ref=e139]
+              - cell "12817393507" [ref=e140]
+              - cell "—" [ref=e141]
+              - cell "New" [ref=e142]:
+                - button "New" [ref=e144]:
+                  - generic [ref=e145]: New
+            - row "10/04/2026 12568008116 2013 Ford Edge Quoted" [ref=e146] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e147]
+              - cell [ref=e148]
+              - cell "12568008116" [ref=e149]
+              - cell "2013 Ford Edge" [ref=e150]
+              - cell "Quoted" [ref=e151]:
+                - button "Quoted" [ref=e153]:
+                  - generic [ref=e154]: Quoted
+            - row "10/04/2026 15107128500 — Lost" [ref=e155] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e156]
+              - cell [ref=e157]
+              - cell "15107128500" [ref=e158]
+              - cell "—" [ref=e159]
+              - cell "Lost" [ref=e160]:
+                - button "Lost" [ref=e162]:
+                  - generic [ref=e163]: Lost
+            - row "10/04/2026 12063544032 2018 Volkswagen Golf GTI New" [ref=e164] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e165]
+              - cell [ref=e166]
+              - cell "12063544032" [ref=e167]
+              - cell "2018 Volkswagen Golf GTI" [ref=e168]
+              - cell "New" [ref=e169]:
+                - button "New" [ref=e171]:
+                  - generic [ref=e172]: New
+            - row "10/04/2026 15205867011 — New" [ref=e173] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e174]
+              - cell [ref=e175]
+              - cell "15205867011" [ref=e176]
+              - cell "—" [ref=e177]
+              - cell "New" [ref=e178]:
+                - button "New" [ref=e180]:
+                  - generic [ref=e181]: New
+            - row "10/04/2026 14045518881 383 stroke model turbo New" [ref=e182] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e183]
+              - cell [ref=e184]
+              - cell "14045518881" [ref=e185]
+              - cell "383 stroke model turbo" [ref=e186]
+              - cell "New" [ref=e187]:
+                - button "New" [ref=e189]:
+                  - generic [ref=e190]: New
+            - row "10/04/2026 18478094175 2013 Mercedes GLK Class Engine Contacted" [ref=e191] [cursor=pointer]:
+              - cell "10/04/2026" [ref=e192]
+              - cell [ref=e193]
+              - cell "18478094175" [ref=e194]
+              - cell "2013 Mercedes GLK Class Engine" [ref=e195]
+              - cell "Contacted" [ref=e196]:
+                - button "Contacted" [ref=e198]:
+                  - generic [ref=e199]: Contacted

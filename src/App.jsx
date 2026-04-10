@@ -1,5 +1,6 @@
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
+import { NotificationProvider } from './context/NotificationContext'
 import ProtectedRoute from './components/ProtectedRoute'
 import Login from './pages/Login'
 import Dashboard from './pages/Dashboard'
@@ -11,6 +12,7 @@ function App() {
   return (
     <BrowserRouter>
       <AuthProvider>
+        <NotificationProvider>
         <Routes>
           <Route path="/login" element={<Login />} />
           <Route
@@ -48,6 +50,7 @@ function App() {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="*" element={<Navigate to="/dashboard" replace />} />
         </Routes>
+        </NotificationProvider>
       </AuthProvider>
     </BrowserRouter>
   )

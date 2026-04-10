@@ -1,0 +1,110 @@
+- generic [ref=e200]:
+  - complementary [ref=e201]:
+    - generic [ref=e202]: LeadFlow
+    - navigation [ref=e203]:
+      - link "Dashboard" [ref=e204] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e205]
+        - text: Dashboard
+      - link "Leads" [ref=e210] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e211]
+        - text: Leads
+      - link "Manager" [ref=e216] [cursor=pointer]:
+        - /url: /manager
+        - img [ref=e217]
+        - text: Manager
+    - generic [ref=e219]:
+      - generic [ref=e220]: Rahul
+      - generic [ref=e221]: manager
+      - button "Sign Out" [ref=e222] [cursor=pointer]:
+        - img [ref=e223]
+        - text: Sign Out
+  - generic [ref=e226]:
+    - banner [ref=e227]:
+      - heading "Leads" [level=1] [ref=e229]
+      - button "Notifications" [ref=e232] [cursor=pointer]:
+        - generic [ref=e233]:
+          - img [ref=e234]
+          - generic [ref=e237]: "13"
+    - main [ref=e238]:
+      - generic [ref=e239]:
+        - generic [ref=e240]: 1 lead
+        - button "New Lead" [ref=e241] [cursor=pointer]:
+          - img [ref=e242]
+          - text: New Lead
+      - generic [ref=e243]:
+        - generic [ref=e244]:
+          - generic [ref=e245]:
+            - img
+            - textbox "Search name, phone, vehicle, notes…" [active] [ref=e246]: Riketa
+            - button [ref=e785] [cursor=pointer]:
+              - img [ref=e786]
+          - button "Clear all" [ref=e789] [cursor=pointer]
+        - generic [ref=e247]:
+          - generic [ref=e248]:
+            - generic [ref=e249]: Status
+            - generic [ref=e250]:
+              - button "New" [ref=e251] [cursor=pointer]
+              - button "Contacted" [ref=e252] [cursor=pointer]
+              - button "Quoted" [ref=e253] [cursor=pointer]
+              - button "Negotiating" [ref=e254] [cursor=pointer]
+              - button "Won" [ref=e255] [cursor=pointer]
+              - button "Lost" [ref=e256] [cursor=pointer]
+              - button "Dead" [ref=e257] [cursor=pointer]
+          - generic [ref=e258]:
+            - generic [ref=e259]: Rep
+            - combobox [ref=e260] [cursor=pointer]:
+              - option "All Reps" [selected]
+              - option "Michael"
+              - option "Neal"
+          - generic [ref=e261]:
+            - generic [ref=e262]: Date Range
+            - generic [ref=e263]:
+              - textbox [ref=e264]
+              - generic [ref=e265]: to
+              - textbox [ref=e266]
+          - generic [ref=e267]:
+            - generic [ref=e268]: Tags
+            - generic [ref=e269]:
+              - button "Spanish" [ref=e270] [cursor=pointer]
+              - button "Incompatible" [ref=e271] [cursor=pointer]
+              - button "Small Part" [ref=e272] [cursor=pointer]
+              - button "Abused" [ref=e273] [cursor=pointer]
+              - button "No Voice" [ref=e274] [cursor=pointer]
+              - button "Old Customer" [ref=e275] [cursor=pointer]
+      - table [ref=e791]:
+        - rowgroup [ref=e792]:
+          - row "Date Customer Phone Vehicle Part Status Rep" [ref=e793]:
+            - columnheader "Date" [ref=e794] [cursor=pointer]:
+              - text: Date
+              - img [ref=e796]
+            - columnheader "Customer" [ref=e799] [cursor=pointer]:
+              - text: Customer
+              - img [ref=e801]
+            - columnheader "Phone" [ref=e804]
+            - columnheader "Vehicle" [ref=e805]
+            - columnheader "Part" [ref=e806]
+            - columnheader "Status" [ref=e807] [cursor=pointer]:
+              - text: Status
+              - img [ref=e809]
+            - columnheader "Rep" [ref=e812] [cursor=pointer]:
+              - text: Rep
+              - img [ref=e814]
+            - columnheader [ref=e817]
+        - rowgroup [ref=e818]:
+          - row "24/03/2026 Riketa Smith 14125290585 2019 NISSAN Sentra Engine Won Rahul" [ref=e819] [cursor=pointer]:
+            - cell "24/03/2026" [ref=e820]
+            - cell "Riketa Smith" [ref=e821]
+            - cell "14125290585" [ref=e822]
+            - cell "2019 NISSAN Sentra" [ref=e823]
+            - cell "Engine" [ref=e824]
+            - cell "Won" [ref=e825]:
+              - generic [ref=e826]: Won
+            - cell "Rahul" [ref=e827]
+            - cell [ref=e828]:
+              - generic [ref=e829]:
+                - button [ref=e830]:
+                  - img [ref=e831]
+                - button [ref=e834]:
+                  - img [ref=e835]

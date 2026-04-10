@@ -1,0 +1,11 @@
+- generic [ref=e1296]:
+  - heading "Lead Management" [level=1] [ref=e1297]
+  - paragraph [ref=e1298]: DiscountAutoParts
+  - generic [ref=e1299]:
+    - generic [ref=e1300]:
+      - generic [ref=e1301]: Email
+      - textbox "Email" [ref=e1302]
+    - generic [ref=e1303]:
+      - generic [ref=e1304]: Password
+      - textbox "Password" [ref=e1305]
+    - button "Sign In" [ref=e1306] [cursor=pointer]

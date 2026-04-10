@@ -1,0 +1,288 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-bottom: var(--space-5);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+}
+
+.customerName {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.phoneLink {
+  font-size: var(--font-base);
+  color: var(--color-primary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.phoneLink:hover {
+  text-decoration: underline;
+}
+
+.headerActions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.pipeline {
+  display: flex;
+  gap: var(--space-1);
+  margin-bottom: var(--space-6);
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2);
+  overflow-x: auto;
+}
+
+.pipelineStep {
+  flex: 1;
+  min-width: 100px;
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+  font-size: var(--font-sm);
+  font-weight: 500;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: var(--color-gray-500);
+  transition: background 0.15s, color 0.15s;
+}
+
+.pipelineStep:hover {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+}
+
+.pipelineStepActive {
+  composes: pipelineStep;
+  background: var(--color-primary);
+  color: white;
+}
+
+.pipelineStepActive:hover {
+  background: var(--color-primary);
+  color: white;
+  opacity: 0.9;
+}
+
+.pipelineStepCompleted {
+  composes: pipelineStep;
+  background: var(--color-gray-200);
+  color: var(--color-gray-700);
+}
+
+.pipelineTerminal {
+  composes: pipelineStep;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  margin-bottom: var(--space-6);
+}
+
+.infoCard {
+  margin-bottom: 0;
+}
+
+.infoGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3) var(--space-5);
+}
+
+.infoLabel {
+  font-size: var(--font-xs);
+  color: var(--color-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 600;
+  margin-bottom: var(--space-1);
+}
+
+.infoValue {
+  font-size: var(--font-sm);
+  color: var(--color-gray-900);
+}
+
+.tagsRow {
+  display: flex;
+  gap: var(--space-2);
+  flex-wrap: wrap;
+  margin-top: var(--space-2);
+}
+
+.tag {
+  background: var(--color-gray-100);
+  color: var(--color-gray-700);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
+  font-size: var(--font-xs);
+  font-weight: 500;
+}
+
+.notesSection {
+  margin-bottom: 0;
+}
+
+.notesText {
+  font-size: var(--font-sm);
+  color: var(--color-gray-700);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin-bottom: var(--space-3);
+}
+
+.notesTextarea {
+  width: 100%;
+  min-height: 80px;
+  padding: var(--space-3);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+  font-family: inherit;
+  resize: vertical;
+  margin-bottom: var(--space-2);
+}
+
+.notesTextarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+}
+
+.followUpRow {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-border);
+}
+
+.followUpLabel {
+  font-size: var(--font-sm);
+  color: var(--color-gray-600);
+  font-weight: 500;
+}
+
+.followUpInput {
+  padding: var(--space-1) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-sm);
+}
+
+.timeline {
+  margin-top: var(--space-6);
+}
+
+.timelineTitle {
+  font-size: var(--font-lg);
+  font-weight: 600;
+  color: var(--color-gray-900);
+  margin-bottom: var(--space-4);
+}
+
+.timelineList {
+  position: relative;
+  padding-left: var(--space-6);
+}
+
+.timelineList::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 4px;
+  bottom: 4px;
+  width: 2px;
+  background: var(--color-gray-200);
+}
+
+.timelineItem {
+  position: relative;
+  padding-bottom: var(--space-4);
+}
+
+.timelineItem:last-child {
+  padding-bottom: 0;
+}
+
+.timelineDot {
+  position: absolute;
+  left: calc(-1 * var(--space-6) + 4px);
+  top: 4px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--color-primary);
+  border: 2px solid var(--color-surface);
+}
+
+.timelineContent {
+  font-size: var(--font-sm);
+  color: var(--color-gray-700);
+  line-height: 1.5;
+}
+
+.timelineMeta {
+  font-size: var(--font-xs);
+  color: var(--color-gray-400);
+  margin-top: var(--space-1);
+}
+
+.confirmBody {
+  font-size: var(--font-sm);
+  color: var(--color-gray-600);
+  line-height: 1.5;
+  margin-bottom: var(--space-4);
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+.errorBanner {
+  padding: var(--space-3) var(--space-4);
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-md);
+  color: var(--color-danger);
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-4);
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .infoGrid {
+    grid-template-columns: 1fr;
+  }
+  .pipeline {
+    gap: var(--space-1);
+  }
+  .pipelineStep,
+  .pipelineStepActive,
+  .pipelineStepCompleted,
+  .pipelineTerminal {
+    min-width: 70px;
+    font-size: var(--font-xs);
+    padding: var(--space-1) var(--space-2);
+  }
+}

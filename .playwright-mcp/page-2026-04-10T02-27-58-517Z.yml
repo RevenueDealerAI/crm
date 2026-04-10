@@ -1,0 +1,57 @@
+- generic [ref=e3]:
+  - complementary [ref=e4]:
+    - generic [ref=e5]: LeadFlow
+    - navigation [ref=e6]:
+      - link "Dashboard" [ref=e7] [cursor=pointer]:
+        - /url: /dashboard
+        - img [ref=e8]
+        - text: Dashboard
+      - link "Leads" [ref=e13] [cursor=pointer]:
+        - /url: /leads
+        - img [ref=e14]
+        - text: Leads
+    - button "Sign Out" [ref=e20] [cursor=pointer]:
+      - img [ref=e21]
+      - text: Sign Out
+  - generic [ref=e24]:
+    - banner [ref=e25]:
+      - heading "Leads" [level=1] [ref=e27]
+      - button "Notifications" [ref=e30] [cursor=pointer]:
+        - img [ref=e32]
+    - main [ref=e35]:
+      - generic [ref=e36]:
+        - generic [ref=e37]: 0 leads
+        - button "New Lead" [ref=e38] [cursor=pointer]:
+          - img [ref=e39]
+          - text: New Lead
+      - generic [ref=e40]:
+        - generic [ref=e42]:
+          - img
+          - textbox "Search name, phone, vehicle, notes…" [ref=e43]
+        - generic [ref=e44]:
+          - generic [ref=e45]:
+            - generic [ref=e46]: Status
+            - generic [ref=e47]:
+              - button "New" [ref=e48] [cursor=pointer]
+              - button "Contacted" [ref=e49] [cursor=pointer]
+              - button "Quoted" [ref=e50] [cursor=pointer]
+              - button "Negotiating" [ref=e51] [cursor=pointer]
+              - button "Won" [ref=e52] [cursor=pointer]
+              - button "Lost" [ref=e53] [cursor=pointer]
+              - button "Dead" [ref=e54] [cursor=pointer]
+          - generic [ref=e55]:
+            - generic [ref=e56]: Date Range
+            - generic [ref=e57]:
+              - textbox [ref=e58]
+              - generic [ref=e59]: to
+              - textbox [ref=e60]
+          - generic [ref=e61]:
+            - generic [ref=e62]: Tags
+            - generic [ref=e63]:
+              - button "Spanish" [ref=e64] [cursor=pointer]
+              - button "Incompatible" [ref=e65] [cursor=pointer]
+              - button "Small Part" [ref=e66] [cursor=pointer]
+              - button "Abused" [ref=e67] [cursor=pointer]
+              - button "No Voice" [ref=e68] [cursor=pointer]
+              - button "Old Customer" [ref=e69] [cursor=pointer]
+      - img [ref=e71]
