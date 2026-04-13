@@ -100,12 +100,9 @@ export default function Dashboard() {
   const followUpColumns = [
     { key: 'customer_name', label: 'Customer' },
     { key: 'phone', label: 'Phone' },
-    {
-      key: 'vehicle',
-      label: 'Vehicle',
-      render: (_, row) =>
-        [row.vehicle_year, row.vehicle_make, row.vehicle_model].filter(Boolean).join(' ') || '—',
-    },
+    { key: 'vehicle_year', label: 'Year', render: (v) => v || '—' },
+    { key: 'vehicle_make', label: 'Make', render: (v) => v || '—' },
+    { key: 'vehicle_model', label: 'Model', render: (v) => v || '—' },
     { key: 'part_needed', label: 'Part' },
     {
       key: 'follow_up_date',
@@ -131,12 +128,9 @@ export default function Dashboard() {
     },
     { key: 'customer_name', label: 'Customer' },
     { key: 'phone', label: 'Phone' },
-    {
-      key: 'vehicle',
-      label: 'Vehicle',
-      render: (_, row) =>
-        [row.vehicle_year, row.vehicle_make, row.vehicle_model].filter(Boolean).join(' ') || '—',
-    },
+    { key: 'vehicle_year', label: 'Year', render: (v) => v || '—' },
+    { key: 'vehicle_make', label: 'Make', render: (v) => v || '—' },
+    { key: 'vehicle_model', label: 'Model', render: (v) => v || '—' },
     {
       key: 'status',
       label: 'Status',
