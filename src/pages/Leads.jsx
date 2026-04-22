@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react'
 import { useNavigate, useSearchParams } from 'react-router-dom'
-import { Plus, Pencil, Trash2 } from 'lucide-react'
+import { Plus, Pencil, Trash2, LayoutGrid, List } from 'lucide-react'
 import Layout from '../components/ui/Layout'
 import Table from '../components/ui/Table'
 import Badge from '../components/ui/Badge'
@@ -10,9 +10,9 @@ import Spinner from '../components/ui/Spinner'
 import EmptyState from '../components/ui/EmptyState'
 import LeadForm from '../components/LeadForm'
 import LeadFilters from '../components/LeadFilters'
+import KanbanBoard from '../components/KanbanBoard'
 import { useAuth } from '../context/AuthContext'
 import { getLeads, createLead, updateLead, deleteLead } from '../lib/leads'
-import { assignLead } from '../lib/assignment'
 import { supabase } from '../lib/supabase'
 import styles from './Leads.module.css'
 
@@ -70,6 +70,10 @@ export default function Leads() {
   const [editLead, setEditLead] = useState(null)
   const [deleteTarget, setDeleteTarget] = useState(null)
   const [submitting, setSubmitting] = useState(false)
+  const [viewMode, setViewMode] = useState(searchParams.get('view') || 'table')
+
+  const [kanbanLeads, setKanbanLeads] = useState([])
+  const [kanbanLoading, setKanbanLoading] = useState(false)
 
   const isManager = profile?.role === 'manager'
 
@@ -103,7 +107,29 @@ export default function Leads() {
     }
   }, [filters, sortBy, sortDir, page])
 
+  const fetchKanbanLeads = useCallback(async () => {
+    setKanbanLoading(true)
+    try {
+      const result = await getLeads({
+        ...filters,
+        sortBy: 'created_at',
+        sortDir: 'desc',
+        page: 1,
+        pageSize: 500,
+      })
+      setKanbanLeads(result.data || [])
+      setCount(result.count || 0)
+    } catch (err) {
+      console.error('Failed to fetch kanban leads:', err)
+    } finally {
+      setKanbanLoading(false)
+    }
+  }, [filters])
+
   useEffect(() => { fetchLeads() }, [fetchLeads])
+  useEffect(() => {
+    if (viewMode === 'kanban') fetchKanbanLeads()
+  }, [viewMode, fetchKanbanLeads])
 
   useEffect(() => {
     const params = {
@@ -111,8 +137,9 @@ export default function Leads() {
     }
     if (sortBy !== 'created_at') params.sortBy = sortBy
     if (sortDir !== 'desc') params.sortDir = sortDir
+    if (viewMode !== 'table') params.view = viewMode
     setSearchParams(params, { replace: true })
-  }, [filters, sortBy, sortDir, setSearchParams])
+  }, [filters, sortBy, sortDir, viewMode, setSearchParams])
 
   function handleFiltersChange(newFilters) {
     setFilters(newFilters)
@@ -132,12 +159,7 @@ export default function Leads() {
   async function handleCreate(data) {
     setSubmitting(true)
     try {
-      const lead = await createLead({ ...data, created_by: profile.id })
-      try {
-        await assignLead(lead.id)
-      } catch (assignErr) {
-        console.error('Auto-assign failed:', assignErr)
-      }
+      await createLead({ ...data, created_by: profile.id, assigned_to: profile.id })
       setCreateOpen(false)
       fetchLeads()
     } catch (err) {
@@ -171,6 +193,22 @@ export default function Leads() {
     } finally {
       setSubmitting(false)
     }
+  }
+
+  async function handleStatusChange(leadId, newStatus) {
+    setKanbanLeads((prev) =>
+      prev.map((l) => (l.id === leadId ? { ...l, status: newStatus } : l))
+    )
+    try {
+      await updateLead(leadId, { status: newStatus })
+    } catch (err) {
+      console.error('Failed to update status:', err)
+      fetchKanbanLeads()
+    }
+  }
+
+  function switchView(mode) {
+    setViewMode(mode)
   }
 
   const totalPages = Math.ceil(count / pageSize)
@@ -240,9 +278,27 @@ export default function Leads() {
     <Layout title="Leads">
       <div className={styles.header}>
         <span className={styles.count}>{count} lead{count !== 1 ? 's' : ''}</span>
-        <Button onClick={() => setCreateOpen(true)}>
-          <Plus size={16} /> New Lead
-        </Button>
+        <div className={styles.headerActions}>
+          <div className={styles.viewToggle}>
+            <Button
+              variant={viewMode === 'table' ? 'primary' : 'secondary'}
+              size="sm"
+              onClick={() => switchView('table')}
+            >
+              <List size={16} />
+            </Button>
+            <Button
+              variant={viewMode === 'kanban' ? 'primary' : 'secondary'}
+              size="sm"
+              onClick={() => switchView('kanban')}
+            >
+              <LayoutGrid size={16} />
+            </Button>
+          </div>
+          <Button onClick={() => setCreateOpen(true)}>
+            <Plus size={16} /> New Lead
+          </Button>
+        </div>
       </div>
 
       <LeadFilters
@@ -252,7 +308,15 @@ export default function Leads() {
         showRepFilter={isManager}
       />
 
-      {loading ? (
+      {viewMode === 'kanban' ? (
+        <KanbanBoard
+          leads={kanbanLeads}
+          loading={kanbanLoading}
+          filters={filters}
+          onStatusChange={handleStatusChange}
+          onCardClick={(lead) => navigate(`/leads/${lead.id}`)}
+        />
+      ) : loading ? (
         <Spinner />
       ) : leads.length === 0 ? (
         <EmptyState

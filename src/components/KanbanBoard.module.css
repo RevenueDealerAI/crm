@@ -1,0 +1,61 @@
+.board {
+  display: flex;
+  gap: var(--space-3);
+  overflow-x: auto;
+  padding-bottom: var(--space-4);
+  min-height: 400px;
+}
+
+.column {
+  flex: 0 0 220px;
+  min-width: 220px;
+  display: flex;
+  flex-direction: column;
+  background: var(--color-gray-50);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.columnHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.columnCount {
+  font-size: var(--font-xs);
+  color: var(--color-text-secondary);
+  font-weight: 500;
+  background: var(--color-gray-200);
+  padding: 0 var(--space-2);
+  border-radius: 9999px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.columnBody {
+  flex: 1;
+  padding: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-height: 100px;
+  transition: background-color 0.15s;
+  border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+}
+
+.columnOver {
+  background-color: var(--color-primary-light);
+}
+
+.emptyColumn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+  font-size: var(--font-xs);
+  color: var(--color-gray-400);
+  padding: var(--space-4);
+}
