@@ -2,7 +2,7 @@ import { useEffect, useCallback } from 'react'
 import { X } from 'lucide-react'
 import styles from './Modal.module.css'
 
-export default function Modal({ open, onClose, title, footer, children }) {
+export default function Modal({ open, onClose, title, footer, children, maxWidth }) {
   const handleKeyDown = useCallback((e) => {
     if (e.key === 'Escape') onClose()
   }, [onClose])
@@ -22,7 +22,7 @@ export default function Modal({ open, onClose, title, footer, children }) {
 
   return (
     <div className={styles.overlay} onClick={onClose}>
-      <div className={styles.modal} onClick={(e) => e.stopPropagation()}>
+      <div className={styles.modal} style={maxWidth ? { maxWidth } : undefined} onClick={(e) => e.stopPropagation()}>
         <div className={styles.header}>
           <div className={styles.title}>{title}</div>
           <button className={styles.closeBtn} onClick={onClose}>

@@ -1,12 +1,14 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Users, AlertCircle, Clock, Trophy, Zap } from 'lucide-react'
+import { Users, AlertCircle, Clock, Trophy, Zap, Upload } from 'lucide-react'
 import Layout from '../components/ui/Layout'
 import Card from '../components/ui/Card'
 import Table from '../components/ui/Table'
 import Badge from '../components/ui/Badge'
 import Spinner from '../components/ui/Spinner'
+import Button from '../components/ui/Button'
 import EmptyState from '../components/ui/EmptyState'
+import CsvImportModal from '../components/CsvImportModal'
 import { updateLead } from '../lib/leads'
 import { assignLead } from '../lib/assignment'
 import useManagerData from '../hooks/useManagerData'
@@ -86,6 +88,7 @@ export default function Manager() {
   const { stats, repStats, activityFeed, leads, unassignedLeads, reps, loading, error, refetch } =
     useManagerData()
   const [repFilter, setRepFilter] = useState('')
+  const [importOpen, setImportOpen] = useState(false)
 
   async function handleReassign(leadId, newRepId) {
     try {
@@ -181,7 +184,18 @@ export default function Manager() {
 
   return (
     <Layout title="Manager Dashboard">
+      <div className={styles.pageActions}>
+        <Button onClick={() => setImportOpen(true)}>
+          <Upload size={14} style={{ marginRight: 6 }} /> Import Leads CSV
+        </Button>
+      </div>
       {error && <div className={styles.errorBanner}>{error}</div>}
+
+      <CsvImportModal
+        open={importOpen}
+        onClose={() => setImportOpen(false)}
+        onImported={refetch}
+      />
 
       <div className={styles.statsGrid}>
         {statCards.map((s) => (
