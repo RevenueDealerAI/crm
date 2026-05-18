@@ -1,5 +1,34 @@
-import { parse } from 'csv-parse/sync'
 import { supabase } from './supabase'
+
+// Browser-native CSV parser (RFC 4180 compliant; avoids Node.js Buffer dependency)
+function parseCsv(text) {
+  const rows = []
+  let row = []
+  let field = ''
+  let inQuotes = false
+  const n = text.length
+
+  for (let i = 0; i < n; i++) {
+    const c = text[i]
+    if (inQuotes) {
+      if (c === '"' && text[i + 1] === '"') { field += '"'; i++ }
+      else if (c === '"') { inQuotes = false }
+      else { field += c }
+    } else {
+      if (c === '"') { inQuotes = true }
+      else if (c === ',') { row.push(field); field = '' }
+      else if (c === '\r' || c === '\n') {
+        if (c === '\r' && text[i + 1] === '\n') i++
+        row.push(field); field = ''
+        if (row.length > 1 || row[0] !== '') rows.push(row)
+        row = []
+      } else { field += c }
+    }
+  }
+  row.push(field)
+  if (row.length > 1 || row[0] !== '') rows.push(row)
+  return rows
+}
 
 export const REQUIRED_COLUMNS = [
   'id',
@@ -70,7 +99,7 @@ function buildNotes({ col21, col22, metaId, email }) {
 }
 
 export function parseLeadsCsv(csvText, profiles, currentUserId) {
-  const rows = parse(csvText, { columns: false, skip_empty_lines: true, relax_column_count: true })
+  const rows = parseCsv(csvText)
   if (rows.length < 2) {
     return { leads: [], skipped: [], unmappedAgents: [], error: 'CSV is empty or has no data rows' }
   }
