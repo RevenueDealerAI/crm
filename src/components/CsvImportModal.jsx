@@ -193,7 +193,7 @@ export default function CsvImportModal({ open, onClose, onImported }) {
                 <li><code>what_part_do_you_need?</code> → <code>part_needed</code></li>
                 <li><code>what_is_your_vehicle_year?/make?/model?</code> → <code>vehicle_year/make/model</code></li>
                 <li><code>lead_status</code> from Meta is ignored — every imported lead starts as <code>new</code></li>
-                <li><code>Agent Name</code> column (optional) — or the first unnamed column after <code>lead_status</code> — is used to assign leads. Mapped: Michael / Michael vm → Michael; Alex(Rahul) → alix; Neal → Neal; Martin → Martin. Anything else → unassigned.</li>
+                <li><code>Agent Name</code> column (optional) — or the first unnamed column after <code>lead_status</code> — is used to assign leads. The value is matched against active agents by full name, then by first name (case-insensitive; "(Rahul)" and "vm" markers are ignored). Anything that doesn't match an active agent → unassigned and listed for review.</li>
                 <li>Unnamed column after the agent column → <code>notes</code> (free-text agent notes)</li>
                 <li>Rows with <code>email=test@meta.com</code> or test placeholders are skipped</li>
                 <li>Rows whose <code>id</code> already exists in any lead's notes are skipped (dedupe)</li>

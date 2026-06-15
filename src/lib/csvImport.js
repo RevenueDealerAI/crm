@@ -54,12 +54,53 @@ export const TEMPLATE_HEADERS = [
   'email', 'full_name', 'phone_number', 'lead_status', 'Agent Name', '',
 ]
 
-const AGENT_NAME_MAP = {
-  'michael': 'Michael',
-  'michael vm': 'Michael',
-  'alex(rahul)': 'alix',
-  'neal': 'Neal',
-  'martin': 'Martin',
+// Optional explicit overrides for CSV agent values that don't cleanly match a
+// profile name (left side must be normalizeName()'d form). Most names resolve
+// automatically via full-name / first-name matching against live profiles, so
+// this only needs entries for genuine quirks.
+const AGENT_ALIASES = {
+  // 'historical csv value' : 'current profile full name'
+}
+
+// Normalize an agent name for matching: lowercase, drop parentheticals like
+// "(Rahul)", drop the "vm" voicemail marker, and collapse punctuation/space.
+function normalizeName(s) {
+  return String(s == null ? '' : s)
+    .toLowerCase()
+    .replace(/\(.*?\)/g, ' ')
+    .replace(/\bvm\b/g, ' ')
+    .replace(/[^a-z\s]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+// Build a resolver from the live profiles list. Matches by exact normalized
+// full name first, then by unique first name. Returns a profile id or null.
+function buildAgentResolver(profiles) {
+  const byFull = {}
+  const byFirst = {}
+  const firstSeen = {}
+  for (const p of profiles) {
+    const norm = normalizeName(p.full_name)
+    if (!norm) continue
+    byFull[norm] = p.id
+    const first = norm.split(' ')[0]
+    firstSeen[first] = (firstSeen[first] || 0) + 1
+    byFirst[first] = p.id
+  }
+  // Drop ambiguous first names (shared by 2+ profiles) so we never misassign.
+  for (const first of Object.keys(firstSeen)) {
+    if (firstSeen[first] > 1) delete byFirst[first]
+  }
+  return (agentRaw) => {
+    let norm = normalizeName(agentRaw)
+    if (!norm) return null
+    if (AGENT_ALIASES[norm]) norm = normalizeName(AGENT_ALIASES[norm])
+    if (byFull[norm]) return byFull[norm]
+    const first = norm.split(' ')[0]
+    if (byFirst[first]) return byFirst[first]
+    return null
+  }
 }
 
 function clean(s) {
@@ -146,10 +187,9 @@ export function parseLeadsCsv(csvText, profiles, currentUserId) {
   const NOTES_A = AGENT >= 0 ? AGENT + 1 : LEAD_STATUS_COL + 1
   const NOTES_B = NOTES_A + 1
 
-  const byName = {}
+  const resolveAgent = buildAgentResolver(profiles)
   let firstManager = null
   for (const p of profiles) {
-    byName[p.full_name] = p.id
     if (p.role === 'manager' && !firstManager) firstManager = p.id
   }
   const createdById = currentUserId || firstManager
@@ -191,10 +231,10 @@ export function parseLeadsCsv(csvText, profiles, currentUserId) {
 
     let assignedTo = null
     if (agentRaw) {
-      const mapped = AGENT_NAME_MAP[agentRaw.toLowerCase().trim()]
-      if (mapped && byName[mapped]) {
-        assignedTo = byName[mapped]
-      } else if (!mapped) {
+      const matchedId = resolveAgent(agentRaw)
+      if (matchedId) {
+        assignedTo = matchedId
+      } else {
         unmappedAgents.add(agentRaw)
       }
     }

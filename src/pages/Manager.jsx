@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { Users, AlertCircle, Clock, Trophy, Zap, Upload } from 'lucide-react'
+import { Users, AlertCircle, Clock, Trophy, Zap, Upload, UserCog } from 'lucide-react'
 import Layout from '../components/ui/Layout'
 import Card from '../components/ui/Card'
 import Table from '../components/ui/Table'
@@ -9,7 +9,8 @@ import Spinner from '../components/ui/Spinner'
 import Button from '../components/ui/Button'
 import EmptyState from '../components/ui/EmptyState'
 import CsvImportModal from '../components/CsvImportModal'
-import { updateLead } from '../lib/leads'
+import AgentsModal from '../components/AgentsModal'
+import { updateLead, bulkAssignLeads } from '../lib/leads'
 import { assignLead } from '../lib/assignment'
 import useManagerData from '../hooks/useManagerData'
 import styles from './Manager.module.css'
@@ -89,6 +90,47 @@ export default function Manager() {
     useManagerData()
   const [repFilter, setRepFilter] = useState('')
   const [importOpen, setImportOpen] = useState(false)
+  const [agentsOpen, setAgentsOpen] = useState(false)
+  const [selected, setSelected] = useState(() => new Set())
+  const [bulkRepId, setBulkRepId] = useState('')
+  const [bulkBusy, setBulkBusy] = useState(false)
+
+  function toggleSelect(id) {
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (next.has(id)) next.delete(id)
+      else next.add(id)
+      return next
+    })
+  }
+
+  function toggleSelectAll(ids, allSelected) {
+    setSelected((prev) => {
+      const next = new Set(prev)
+      if (allSelected) ids.forEach((id) => next.delete(id))
+      else ids.forEach((id) => next.add(id))
+      return next
+    })
+  }
+
+  function clearSelection() {
+    setSelected(new Set())
+    setBulkRepId('')
+  }
+
+  async function handleBulkAssign() {
+    if (!bulkRepId || selected.size === 0) return
+    setBulkBusy(true)
+    try {
+      await bulkAssignLeads([...selected], bulkRepId)
+      clearSelection()
+      refetch()
+    } catch (err) {
+      console.error('Bulk assign failed:', err)
+    } finally {
+      setBulkBusy(false)
+    }
+  }
 
   async function handleReassign(leadId, newRepId) {
     try {
@@ -114,7 +156,31 @@ export default function Manager() {
     ? leads.filter((l) => l.assigned_to === repFilter)
     : leads
 
+  const filteredIds = filteredLeads.map((l) => l.id)
+  const allSelected = filteredIds.length > 0 && filteredIds.every((id) => selected.has(id))
+
   const leadColumns = [
+    {
+      key: 'select',
+      label: (
+        <input
+          type="checkbox"
+          checked={allSelected}
+          onChange={() => toggleSelectAll(filteredIds, allSelected)}
+          onClick={(e) => e.stopPropagation()}
+          aria-label="Select all leads"
+        />
+      ),
+      render: (_, row) => (
+        <input
+          type="checkbox"
+          checked={selected.has(row.id)}
+          onChange={() => toggleSelect(row.id)}
+          onClick={(e) => e.stopPropagation()}
+          aria-label={`Select lead for ${row.customer_name || 'customer'}`}
+        />
+      ),
+    },
     {
       key: 'created_at',
       label: 'Date',
@@ -185,6 +251,9 @@ export default function Manager() {
   return (
     <Layout title="Manager Dashboard">
       <div className={styles.pageActions}>
+        <Button variant="secondary" onClick={() => setAgentsOpen(true)}>
+          <UserCog size={14} style={{ marginRight: 6 }} /> Manage Agents
+        </Button>
         <Button onClick={() => setImportOpen(true)}>
           <Upload size={14} style={{ marginRight: 6 }} /> Import Leads CSV
         </Button>
@@ -195,6 +264,12 @@ export default function Manager() {
         open={importOpen}
         onClose={() => setImportOpen(false)}
         onImported={refetch}
+      />
+
+      <AgentsModal
+        open={agentsOpen}
+        onClose={() => setAgentsOpen(false)}
+        onChanged={refetch}
       />
 
       <div className={styles.statsGrid}>
@@ -230,7 +305,7 @@ export default function Manager() {
               <select
                 className={styles.filterSelect}
                 value={repFilter}
-                onChange={(e) => setRepFilter(e.target.value)}
+                onChange={(e) => { setRepFilter(e.target.value); clearSelection() }}
               >
                 <option value="">All Reps</option>
                 {reps.map((rep) => (
@@ -238,6 +313,27 @@ export default function Manager() {
                 ))}
               </select>
             </div>
+            {selected.size > 0 && (
+              <div className={styles.bulkBar}>
+                <span className={styles.bulkCount}>{selected.size} selected</span>
+                <select
+                  className={styles.filterSelect}
+                  value={bulkRepId}
+                  onChange={(e) => setBulkRepId(e.target.value)}
+                >
+                  <option value="">Assign to…</option>
+                  {reps.map((rep) => (
+                    <option key={rep.id} value={rep.id}>{rep.full_name}</option>
+                  ))}
+                </select>
+                <Button size="sm" onClick={handleBulkAssign} disabled={!bulkRepId} loading={bulkBusy}>
+                  Assign {selected.size} lead{selected.size === 1 ? '' : 's'}
+                </Button>
+                <Button size="sm" variant="secondary" onClick={clearSelection} disabled={bulkBusy}>
+                  Clear
+                </Button>
+              </div>
+            )}
             {filteredLeads.length > 0 ? (
               <Table
                 columns={leadColumns}

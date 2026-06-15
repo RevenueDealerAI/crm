@@ -79,6 +79,17 @@ export async function updateLead(id, updates) {
   return data
 }
 
+export async function bulkAssignLeads(ids, assignedTo) {
+  if (!ids || ids.length === 0) return { count: 0 }
+  const { data, error } = await supabase
+    .from('leads')
+    .update({ assigned_to: assignedTo })
+    .in('id', ids)
+    .select('id')
+  if (error) throw error
+  return { count: data?.length || 0 }
+}
+
 export async function deleteLead(id) {
   const { error } = await supabase
     .from('leads')

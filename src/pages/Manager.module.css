@@ -93,6 +93,23 @@
   background: var(--color-surface);
 }
 
+.bulkBar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-2) var(--space-3);
+  margin-bottom: var(--space-3);
+  background: var(--color-gray-50);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+}
+
+.bulkCount {
+  font-size: var(--font-sm);
+  font-weight: 600;
+  color: var(--color-gray-700);
+}
+
 .activityFeed {
   max-height: 400px;
   overflow-y: auto;
@@ -179,6 +196,7 @@
 .pageActions {
   display: flex;
   justify-content: flex-end;
+  gap: var(--space-3);
   margin-bottom: var(--space-4);
 }
 
